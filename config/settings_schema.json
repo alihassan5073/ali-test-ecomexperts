@@ -33,18 +33,16 @@
       }
     ]
   },
-
-{
-"name": "Free Product",
-"settings": [
   {
-    "type": "product",
-    "id": "FreeProduct",
-    "label": "Select Free Product"
-  }
-]
-},
-
+    "name": "Free Product",
+    "settings": [
+      {
+        "type": "product",
+        "id": "FreeProduct",
+        "label": "Select Free Product"
+      }
+    ]
+  },
   {
     "name": "t:settings_schema.colors.name",
     "settings": [
