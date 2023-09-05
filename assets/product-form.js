@@ -63,7 +63,7 @@ if (!customElements.get('product-form')) {
 
                             //added a free product to cart
               if (!this.cart) {
-                                if(FreeProductId != undefined){
+                                if(FreeProductId != undefined ){
                                   let formData = {
                    'items': [{
                     'id': FreeProductId,
