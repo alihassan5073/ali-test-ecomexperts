@@ -61,7 +61,7 @@ if (!customElements.get('product-form')) {
               return;
             } else
 
-                            
+                            //added a free product to cart
               if (!this.cart) {
                                 if(FreeProductId != undefined){
                                   let formData = {
@@ -90,6 +90,24 @@ if (!customElements.get('product-form')) {
             }
 
 
+            if(removedItemId === FreeProductId){
+
+              fetch(window.Shopify.root + 'cart/change.js'),{
+                method: 'POST',
+                headers:{
+                  'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                  'id': FreeProductId,
+                  'quantity': 0
+                })
+              }.then(response => {
+                console.log('Free product removed from cart:' , response);
+              })
+              .catch((error) => {
+                console.error( 'Error:' error)
+              });
+            }
 
             if (!this.error)
               publish(PUB_SUB_EVENTS.cartUpdate, { source: 'product-form', productVariantId: formData.get('id') });
